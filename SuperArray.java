@@ -17,4 +17,13 @@ public class SuperArray {
     return size;
   }
 
+  public boolean add(String element) {
+    int i = 0;
+    while (data[i] != null) {
+      i++;
+    }
+    data[i] = element;
+    return data[i] == element;
+  }
+
 }
