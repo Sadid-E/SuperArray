@@ -26,4 +26,8 @@ public class SuperArray {
     return data[i] == element;
   }
 
+  public String get(int index) {
+    return data[index];
+  }
+
 }
