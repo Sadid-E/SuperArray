@@ -21,9 +21,12 @@ public class SuperArray {
     int i = 0;
     while (data[i] != null) {
       i++;
+    if (i >= data.length) {
+      resize();
     }
+  }
     data[i] = element;
-    return data[i] == element;
+    return true;
   }
 
   public String get(int index) {
@@ -31,8 +34,17 @@ public class SuperArray {
   }
 
   public String set(int index, String element) {
+    String value = data[index];
     data[index] = element;
-    return data[index];
+    return value;
+  }
+
+  private void resize() {
+    String[] resize = new String[data.length + 10];
+    for (int i = 0; i < data.length; i++) {
+      resize[i] = data[i];
+    }
+    data = resize;
   }
 
 }
