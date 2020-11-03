@@ -60,4 +60,16 @@ public class SuperArray {
     data = new String[10];
   }
 
+  public String toString() {
+    String elements = "[";
+    int last = 0;
+    for (int i = 1; i < data.length; i++) {
+      if (data[i] != null) {
+        elements += data[i-1] + ", ";
+        last ++;
+      }
+    }
+    return elements + data[last] + "]";
+  }
+
 }
