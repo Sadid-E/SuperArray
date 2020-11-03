@@ -47,4 +47,17 @@ public class SuperArray {
     data = resize;
   }
 
+  public boolean isEmpty() {
+    for (int i = 0; i < data.length; i++) {
+      if (data[i] != null) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public void clear() {
+    data = new String[10];
+  }
+
 }
