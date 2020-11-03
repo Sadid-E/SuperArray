@@ -40,7 +40,7 @@ public class SuperArray {
   }
 
   private void resize() {
-    String[] resize = new String[data.length + 10];
+    String[] resize = new String[data.length * 2];
     for (int i = 0; i < data.length; i++) {
       resize[i] = data[i];
     }
@@ -70,6 +70,15 @@ public class SuperArray {
       }
     }
     return elements + data[last] + "]";
+  }
+
+  public boolean contains(String s) {
+    for (int i = 0; i < data.length; i ++) {
+      if (data[i].equals(s)) {
+        return true;
+      }
+    }
+    return false;
   }
 
 }
