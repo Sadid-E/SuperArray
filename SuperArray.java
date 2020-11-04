@@ -52,11 +52,9 @@ public class SuperArray {
   }
 
   public boolean isEmpty() {
-    for (int i = 0; i < data.length; i++) {
-      if (data[i] != null) {
+      if (size() != 0) {
         return false;
       }
-    }
     return true;
   }
 
@@ -67,22 +65,30 @@ public class SuperArray {
   public String toString() {
     String elements = "[";
     int last = 0;
-    for (int i = 1; i < data.length; i++) {
-      if (data[i] != null) {
+    for (int i = 1; i < size(); i++) {
         elements += data[i-1] + ", ";
         last ++;
-      }
     }
     return elements + data[last] + "]";
   }
 
   public boolean contains(String s) {
-    for (int i = 0; i < data.length; i ++) {
+    for (int i = 0; i < size(); i ++) {
       if (data[i].equals(s)) {
         return true;
       }
     }
     return false;
+  }
+
+  public void add(int index, String element) {
+    for (int i = size() - 1; i >= index; i--) {
+     if (i+1 >= data.length) {
+        resize();
+      }
+      data[i+1] = data[i];
+    }
+    data[index] = element;
   }
 
 }
