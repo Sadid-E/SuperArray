@@ -109,4 +109,12 @@ public class SuperArray {
     return -1;
   }
 
+  public String[] toArray() {
+    String[] array = new String[size()];
+    for (int i = 0; i < size(); i++) {
+      array[i] = data[i];
+    }
+    return array;
+  }
+
 }
