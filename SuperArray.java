@@ -120,4 +120,14 @@ public class SuperArray {
     return array;
   }
 
+  public int lastIndexOf(String value){
+    int lastIndex = -1;
+    for (int i = 0; i < size(); i++) {
+      if ((data[i]).equals(value)) {
+        lastIndex = i;
+      }
+    }
+    return lastIndex;
+  }
+
 }
