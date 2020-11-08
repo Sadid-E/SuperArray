@@ -13,7 +13,7 @@ public class Demo {
     removeDuplicates(a);
     removeDuplicates(b);
     for (int i = 0; i < a.size(); i++) {
-      for (int j = 0; j < a.size(); j++) {
+      for (int j = 0; j < b.size(); j++) {
         if (a.get(i).equals(b.get(j))) {
           overlap.add(a.get(i));
         }
