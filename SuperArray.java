@@ -120,7 +120,7 @@ public class SuperArray {
     return array;
   }
 
-  public int lastIndexOf(String value){
+  public int lastIndexOf(String value) {
     int lastIndex = -1;
     for (int i = 0; i < size(); i++) {
       if ((data[i]).equals(value)) {
@@ -128,6 +128,10 @@ public class SuperArray {
       }
     }
     return lastIndex;
+  }
+
+  public boolean equals(SuperArray other) {
+    return toString().equals(other.toString());
   }
 
 }
