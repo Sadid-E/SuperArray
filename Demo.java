@@ -22,6 +22,21 @@ public class Demo {
     return overlap;
   }
 
+  public static SuperArray zip(SuperArray a, SuperArray b) {
+    SuperArray zip = new SuperArray();
+      int size = 0;
+      if (a.size() > b.size()) {
+        size = a.size();
+      } else {
+        size = b.size();
+      }
+      for (int i = 0; i < size; i++) {
+        zip.add(a.get(i));
+        zip.add(b.get(i));
+      }
+    return zip;
+  }
+
   public static void main(String[]args) {
     SuperArray words = new SuperArray();
     words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");
@@ -36,6 +51,12 @@ public class Demo {
     a.add("9"); a.add("1"); a.add("2"); a.add("2"); a.add("3"); a.add("4");
     b.add("0"); b.add("4"); b.add("2"); b.add("2"); b.add("9");
     System.out.println(findOverlap(a,b));
+
+    System.out.println(a);
+    System.out.println(b);
+    System.out.println(zip(a,b));
+    System.out.println(zip(b,words));
+    System.out.println(zip(a,words));
   }
 
 }
