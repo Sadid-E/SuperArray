@@ -14,7 +14,6 @@ public class Tester {
     System.out.println(a.isEmpty());
     System.out.println(a.get(0));
     a.clear();
-    System.out.println(a.get(0));
     a.add("1");
     System.out.println(a.get(0));
     System.out.println(a.set(0,"0"));
@@ -40,6 +39,26 @@ public class Tester {
     SuperArray c = new SuperArray();
     c = a;
     System.out.println(a.equals(c));
+    try { SuperArray d = new SuperArray(-2);}
+    catch (IllegalArgumentException e) {
+      System.out.println("test passed");
+    }
+    try {a.get(36);}
+    catch (IndexOutOfBoundsException e) {
+      System.out.println("test passed");
+    }
+    try {b.set(7,"no");}
+    catch (IndexOutOfBoundsException e) {
+      System.out.println("test passed");
+    }
+    try {b.add(6,"ok");}
+    catch (IndexOutOfBoundsException e) {
+      System.out.println("test passed");
+    }
+    try {c.remove(-2);}
+    catch (IndexOutOfBoundsException e) {
+      System.out.println("test passed");
+    }
   }
 
 }
