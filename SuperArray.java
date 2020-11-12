@@ -97,7 +97,11 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
-    for (int i = size() - 1; i >= index; i--) {
+    if (index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("index is " +
+        index + " size is " + size() + ", it is out of bounds!");
+    }
+    for (int i = size(); i >= index; i--) {
      if (i+1 >= data.length) {
         resize();
       }
@@ -107,6 +111,10 @@ public class SuperArray {
   }
 
   public String remove(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("index is " +
+        index + " size is " + size() + ", it is out of bounds!");
+    }
     String removed = data[index];
     for (int i = index; i < size() - 1; i ++) {
       data[i] = data [i+1];
