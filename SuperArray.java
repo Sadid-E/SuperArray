@@ -40,12 +40,16 @@ public class SuperArray {
   public String get(int index) {
     if (index < 0 || index >= size()) {
       throw new IndexOutOfBoundsException("index is " +
-        index + ", it is out of bounds!");
+        index + " size is " + size() + ", it is out of bounds!");
     }
     return data[index];
   }
 
   public String set(int index, String element) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("index is " +
+        index + " size is " + size() + ", it is out of bounds!");
+    }
     String value = data[index];
     data[index] = element;
     return value;
